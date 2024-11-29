@@ -78,10 +78,49 @@
                     <view key="view" contentMode="scaleToFill" id="HEk-hR-URN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Tpe-AP-BeJ">
+                                <rect key="frame" x="10" y="69" width="370" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="370" id="dn7-Qg-ee9"/>
+                                    <constraint firstAttribute="height" constant="45" id="vJG-cR-R2u"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ZWY-ey-bYt" id="Y8v-wl-can"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DLU-h5-Uwc">
+                                <rect key="frame" x="0.0" y="124" width="393" height="645"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MovieSearchTableViewCell" id="AkR-l1-Qfh">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AkR-l1-Qfh" id="AQg-hZ-Mzj">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Yzj-pt-3qT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Yzj-pt-3qT" firstAttribute="trailing" secondItem="DLU-h5-Uwc" secondAttribute="trailing" id="5EN-e5-6bq"/>
+                            <constraint firstItem="DLU-h5-Uwc" firstAttribute="top" secondItem="Tpe-AP-BeJ" secondAttribute="bottom" constant="10" id="KiN-tn-M6T"/>
+                            <constraint firstItem="DLU-h5-Uwc" firstAttribute="leading" secondItem="Yzj-pt-3qT" secondAttribute="leading" id="P5s-eQ-cZG"/>
+                            <constraint firstItem="Tpe-AP-BeJ" firstAttribute="top" secondItem="Yzj-pt-3qT" secondAttribute="top" constant="10" id="erw-JB-HCt"/>
+                            <constraint firstItem="Yzj-pt-3qT" firstAttribute="bottom" secondItem="DLU-h5-Uwc" secondAttribute="bottom" id="kVK-a1-vfE"/>
+                            <constraint firstItem="Tpe-AP-BeJ" firstAttribute="leading" secondItem="Yzj-pt-3qT" secondAttribute="leading" constant="10" id="qd6-Fv-fCl"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass.circle.fill" id="ad9-ke-2MG"/>
+                    <connections>
+                        <outlet property="movieSearchBar" destination="Tpe-AP-BeJ" id="mGC-j5-wHs"/>
+                        <outlet property="movieSearchTableView" destination="DLU-h5-Uwc" id="nTp-Yq-a7T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPJ-7j-dOQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
