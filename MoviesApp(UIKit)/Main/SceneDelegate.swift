@@ -1,9 +1,3 @@
-//
-//  SceneDelegate.swift
-//  MoviesApp(UIKit)
-//
-//  Created by Admin on 02/09/1403 AP.
-//
 
 import UIKit
 

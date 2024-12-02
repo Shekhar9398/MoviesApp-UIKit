@@ -24,9 +24,9 @@ class MovieDetailsViewController: UIViewController {
         
         // Debugging indexCarry
         if let row = indexCarry?.row {
-            print("Index is \(row)")
+            print("Row is \(row)")
         } else {
-            print("Index is nil")
+            print("Row is nil")
         }
     }
     

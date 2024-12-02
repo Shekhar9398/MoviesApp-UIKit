@@ -15,20 +15,16 @@ class MovieViewController: UIViewController {
         
         moviesCollectionView.register(moviePosterCollectionViewCell.nib(), forCellWithReuseIdentifier: moviePosterCollectionViewCell.identifier)
         
-        bindViewModel()
-        viewModel.fetchMovies()
-        
-        //Set title for HomeVc
-        self.title = "Movies"
-
-    }
-    
-    private func bindViewModel() {
         viewModel.onMoviesUpdated = { [weak self] in
             DispatchQueue.main.async {
                 self?.moviesCollectionView.reloadData()
             }
         }
+        viewModel.fetchMovies()
+        
+        //Set title for HomeVc
+        self.title = "Movies"
+
     }
 }
 

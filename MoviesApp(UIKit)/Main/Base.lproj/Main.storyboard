@@ -79,7 +79,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Tpe-AP-BeJ">
+                            <searchBar contentMode="redraw" placeholder="Search Movies" translatesAutoresizingMaskIntoConstraints="NO" id="Tpe-AP-BeJ">
                                 <rect key="frame" x="10" y="69" width="370" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="370" id="dn7-Qg-ee9"/>
@@ -243,31 +243,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TextField" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KB0-AD-xKD" customClass="NoCopySelectTextField" customModule="MoviesApp_UIKit_" customModuleProvider="target">
-                                <rect key="frame" x="30" y="89" width="333" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="70a-zG-DCo"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UdQ-tG-L8w">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DownloadTableViewCell" rowHeight="154" id="3vV-Lq-0u4">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="154"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3vV-Lq-0u4" id="s4K-Qt-0cT">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="154"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KB0-AD-xKD" secondAttribute="trailing" constant="30" id="GgY-6L-D3v"/>
-                            <constraint firstItem="KB0-AD-xKD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="ePe-3E-4hb"/>
-                            <constraint firstItem="KB0-AD-xKD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="mVE-q1-Ast"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UdQ-tG-L8w" secondAttribute="bottom" id="W5Y-gp-njc"/>
+                            <constraint firstItem="UdQ-tG-L8w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fxR-Sq-6gL"/>
+                            <constraint firstItem="UdQ-tG-L8w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kdc-TG-t6q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UdQ-tG-L8w" secondAttribute="trailing" id="r34-Ri-tuW"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Downloads" image="arrowshape.down.circle" catalog="system" selectedImage="arrowshape.down.circle.fill" id="iNI-1b-Kym"/>
                     <connections>
-                        <outlet property="myTextfield" destination="KB0-AD-xKD" id="Oc3-JI-PNt"/>
+                        <outlet property="downloadTableView" destination="UdQ-tG-L8w" id="Rij-rH-fPh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="523" y="458"/>
+            <point key="canvasLocation" x="522.90076335877859" y="457.74647887323948"/>
         </scene>
         <!--Home-->
         <scene sceneID="M1u-1N-jGZ">
