@@ -40,6 +40,11 @@ class TopSearchViewController: UIViewController, UITableViewDelegate, UITableVie
         filterMovies(searchText: searchText)
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    
     // UISearchBarDelegate method for clearing search text
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
